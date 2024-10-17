@@ -20,7 +20,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from '@/components/ui/select';
-import { CalendarIcon, CheckIcon } from 'lucide-react';
+import { CalendarIcon, CheckIcon, Star } from 'lucide-react';
 import DatePicker from 'react-datepicker';
 
 import 'react-datepicker/dist/react-datepicker.css';
@@ -173,7 +173,9 @@ export default function Newcontest() {
                 <SelectValue placeholder="Select Campaign" />
               </SelectTrigger>
               <SelectContent>
-                <SelectItem value="campaign1">Gadgets and Accessories</SelectItem>
+                <SelectItem value="campaign1">
+                  Gadgets and Accessories
+                </SelectItem>
                 <SelectItem value="campaign2">Laptop and Computers</SelectItem>
                 <SelectItem value="campaign3">Apple Products</SelectItem>
                 <SelectItem value="campaign4">Crypto Games</SelectItem>
@@ -185,7 +187,9 @@ export default function Newcontest() {
           <div className="col-span-2 flex items-center gap-4">
             <div className="flex items-center space-x-2">
               <Checkbox id="premium" />
-              <Label htmlFor="premium">Premium</Label>
+              <Label htmlFor="premium" className="flex items-center space-x-1">
+                Premium <Star className="w-5 h-5" />
+              </Label>
             </div>
             <div className="flex items-center space-x-2">
               <Checkbox id="pay-token-contest" />
