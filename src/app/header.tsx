@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 
+import Image from 'next/image';
 import Link from 'next/link';
 
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
@@ -16,13 +17,13 @@ import {
 } from '@/components/ui/dropdown-menu';
 import { Sheet, SheetContent } from '@/components/ui/sheet';
 import { NavItems } from '@/config';
-import { Menu, Wallet } from 'lucide-react';
-import Image from 'next/image';
+import { ChevronDown, Menu, Wallet } from 'lucide-react';
+
 import {
   Popover,
   PopoverContent,
   PopoverTrigger,
-} from "../../src/components/ui/popover"
+} from '../../src/components/ui/popover';
 
 export default function Header() {
   const navItems = NavItems();
@@ -35,17 +36,24 @@ export default function Header() {
         className="flex items-center gap-2 text-lg font-semibold md:text-base"
         prefetch={false}
       >
-        <Image alt="Contest" src="./logo.svg" className="mx-auto h-10 w-auto" width={50} height={40}/>
+        <Image
+          alt="Contest"
+          src="./logo.svg"
+          className="mx-auto h-10 w-auto"
+          width={50}
+          height={40}
+        />
         <span>Dashboard</span>
       </Link>
 
       <div className="ml-4 flex items-center gap-3">
-        <div className='w-11 h-8'>
-        <Popover>
-  <PopoverTrigger className='flex'><Wallet />$900</PopoverTrigger>
-  <PopoverContent>Place content for the popover here.</PopoverContent>
-</Popover>
-
+        <div className="w-13 h-8 mr-4">
+          <Popover>
+            <PopoverTrigger className="flex items-center">
+              <Wallet className='mx-2' /> <div>USD: 900</div><ChevronDown />
+            </PopoverTrigger>
+            <PopoverContent className='w-auto'>Place content for the popover here.</PopoverContent>
+          </Popover>
         </div>
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
@@ -64,8 +72,9 @@ export default function Header() {
             </Button>
           </DropdownMenuTrigger>
           <DropdownMenuContent align="end">
-            
-            <DropdownMenuItem>Logout</DropdownMenuItem>
+            <DropdownMenuItem>
+              <Link href="/login">Logout</Link>
+            </DropdownMenuItem>
           </DropdownMenuContent>
         </DropdownMenu>
 
@@ -74,7 +83,7 @@ export default function Header() {
         </button>
 
         <Sheet open={isOpen} onOpenChange={setIsOpen}>
-          <SheetContent side="right" className='block md:hidden'>
+          <SheetContent side="right" className="block md:hidden">
             <div className="pt-4  overflow-y-auto h-fit w-full flex flex-col gap-1">
               {navItems.map((navItem, idx) => (
                 <Link
