@@ -80,7 +80,7 @@ export function Tablecontest() {
           <TableHead className="w-[100px]">User</TableHead>
           <TableHead>Status</TableHead>
           <TableHead>Contests Won</TableHead>
-          <TableHead className="text-right">Contests Joined</TableHead>
+          <TableHead>Contests Joined</TableHead>
           <TableHead className="text-right">Referals</TableHead>
         </TableRow>
       </TableHeader>

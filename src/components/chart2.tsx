@@ -21,17 +21,17 @@ import {
 export const description = "A simple area chart"
 
 const chartData = [
-  { month: "January", desktop: 186 },
-  { month: "February", desktop: 305 },
-  { month: "March", desktop: 237 },
-  { month: "April", desktop: 73 },
-  { month: "May", desktop: 209 },
-  { month: "June", desktop: 214 },
+  { month: "January", users: 186 },
+  { month: "February", users: 305 },
+  { month: "March", users: 237 },
+  { month: "April", users: 73 },
+  { month: "May", users: 209 },
+  { month: "June", users: 214 },
 ]
 
 const chartConfig = {
-  desktop: {
-    label: "Desktop",
+  users: {
+    label: "Users",
     color: "hsl(var(--chart-1))",
   },
 } satisfies ChartConfig
@@ -40,7 +40,7 @@ export function Chart2component() {
   return (
     <Card className="w-96 h-50">
       <CardHeader>
-        <CardTitle>Area Chart</CardTitle>
+        <CardTitle>Visitors</CardTitle>
         <CardDescription>
           Showing total visitors for the last 6 months
         </CardDescription>
@@ -68,11 +68,11 @@ export function Chart2component() {
               content={<ChartTooltipContent indicator="line" />}
             />
             <Area
-              dataKey="desktop"
+              dataKey="users"
               type="natural"
-              fill="var(--color-desktop)"
+              fill="var(--color-users)"
               fillOpacity={0.4}
-              stroke="var(--color-desktop)"
+              stroke="var(--color-users)"
             />
           </AreaChart>
         </ChartContainer>
