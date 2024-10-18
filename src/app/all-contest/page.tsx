@@ -1,14 +1,15 @@
-import React from 'react'
+import React from 'react';
 import PagePlaceholder from '@/components/page-placeholder';
+import Allcontest from '../../components/all-contest/All-contest';
 
 export default function page() {
   return (
-    <div >
+    <div className="p-0 m-0">
       <PagePlaceholder pageName="All Contest" />
 
-      <div >
-        w
+      <div className="p-0 m-0">
+        <Allcontest />
       </div>
-      </div>
-  )
+    </div>
+  );
 }

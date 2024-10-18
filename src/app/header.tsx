@@ -15,6 +15,11 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu';
+import {
+  HoverCard,
+  HoverCardContent,
+  HoverCardTrigger,
+} from '@/components/ui/hover-card';
 import { Sheet, SheetContent } from '@/components/ui/sheet';
 import { NavItems } from '@/config';
 import { ChevronDown, Menu, Wallet } from 'lucide-react';
@@ -39,21 +44,42 @@ export default function Header() {
         <Image
           alt="Contest"
           src="./logo.svg"
-          className="mx-auto h-10 w-auto"
-          width={50}
-          height={40}
+          className="mx-auto h-8 w-auto"
+          width={40}
+          height={30}
         />
-        <span>Dashboard</span>
+        <span>Contest</span>
       </Link>
 
       <div className="ml-4 flex items-center gap-3">
         <div className="w-13 h-8 mr-4">
-          <Popover>
-            <PopoverTrigger className="flex items-center">
-              <Wallet className='mx-2' /> <div>USD: 900</div><ChevronDown />
-            </PopoverTrigger>
-            <PopoverContent className='w-auto'>Place content for the popover here.</PopoverContent>
-          </Popover>
+          <HoverCard>
+            <HoverCardTrigger asChild>
+              <Button variant="outline">
+                <Wallet className="mx-2" /> <div>USD: 900</div>
+                <ChevronDown />
+              </Button>
+            </HoverCardTrigger>
+            <HoverCardContent className="w-80">
+              <div className="flex justify-between space-x-4">
+                <Avatar>
+                  <AvatarImage src="https://github.com/vercel.png" />
+                  <AvatarFallback>VC</AvatarFallback>
+                </Avatar>
+                <div className="space-y-1">
+                  <h4 className="text-sm font-semibold">@nextjs</h4>
+                  <p className="text-sm">
+                    The React Framework – created and maintained by @vercel.
+                  </p>
+                  <div className="flex items-center pt-2">
+                    <span className="text-xs text-muted-foreground">
+                      Joined December 2021
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </HoverCardContent>
+          </HoverCard>
         </div>
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
