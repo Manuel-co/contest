@@ -62,11 +62,12 @@ export default function Newcontest() {
             <div className="relative">
               <DatePicker
                 selected={startDate}
-                onChange={(date) => setStartDate(date)}
+                onChange={(date) => setStartDate(date ?? undefined)} // Convert null to undefined
                 showTimeSelect
                 dateFormat="dd/MM/yyyy HH:mm"
-                className="w-full p-2  rounded-md"
+                className="w-full p-2 rounded-md"
               />
+
               {/* <span className="absolute right-2 top-3 text-gray-400">
                   <CalendarIcon />
                 </span> */}
