@@ -4,7 +4,7 @@ import PagePlaceholder from '@/components/page-placeholder';
 export default function page() {
   return (
     <div >
-      <PagePlaceholder pageName="All-Contest" />
+      <PagePlaceholder pageName="Active-Contest" />
 
       <div >
         w
