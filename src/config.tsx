@@ -50,7 +50,7 @@
 
 import { usePathname } from 'next/navigation';
 
-import { Bot, Kanban, Gamepad2, Home, User } from 'lucide-react';
+import { Bot, Kanban, Gamepad2, Home,  Plus, Check  } from 'lucide-react';
 
 export const NavItems = () => {
   const pathname = usePathname();
@@ -77,8 +77,22 @@ export const NavItems = () => {
     {
       name: 'New-contest',
       href: '/new-contest',
-      icon: <Gamepad2 size={20} />,
+      icon: < Plus  size={20} />,
       active: isNavItemActive(pathname, '/new-contest'),
+      position: 'top',
+    },
+    {
+      name: 'Active-contest',
+      href: '/active-contest',
+      icon: <Check  size={20} />,
+      active: isNavItemActive(pathname, '/active-contest'),
+      position: 'top',
+    },
+    {
+      name: 'All-contest',
+      href: '/all-contest',
+      icon: <Gamepad2 size={20} />,
+      active: isNavItemActive(pathname, '/all-contest'),
       position: 'top',
     },
       {
