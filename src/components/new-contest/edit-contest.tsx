@@ -43,7 +43,7 @@ export default function Editcontest() {
     <div className="flex justify-center items-center h-screen">
       <Card className="w-full max-w-3xl p-4">
         <CardHeader>
-          <CardTitle>Create New Contest</CardTitle>
+          <CardTitle>Edit Contest</CardTitle>
         </CardHeader>
         <CardContent className="grid grid-cols-2 gap-4">
           {/* Product Name */}
