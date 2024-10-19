@@ -38,123 +38,122 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"; // Import Avatar component
 
 // Sample data for the table
 const data: User[] = [
-  {
-    id: "1",
-    username: "johndoe",
-    status: "Premium",
-    ContestJoined: 5,
-    contestWon: 2,
-    referral: 10, // Added referral count
-  },
-  {
-    id: "2",
-    username: "janedoe",
-    status: "Regular",
-    ContestJoined: 3,
-    contestWon: 0,
-    referral: 5, // Added referral count
-  },
-  {
-    id: "3",
-    username: "sam_smith",
-    status: "Premium",
-    ContestJoined: 8,
-    contestWon: 3,
-    referral: 8, // Added referral count
-  },
-  {
-    id: "4",
-    username: "alice",
-    status: "Regular",
-    ContestJoined: 2,
-    contestWon: 1,
-    referral: 12, // Added referral count
-  },
-  {
-    id: "4",
-    username: "alice",
-    status: "Regular",
-    ContestJoined: 2,
-    contestWon: 1,
-    referral: 12, // Added referral count
-  },
-  {
-    id: "4",
-    username: "alice",
-    status: "Regular",
-    ContestJoined: 2,
-    contestWon: 1,
-    referral: 12, // Added referral count
-  },
-  {
-    id: "4",
-    username: "alice",
-    status: "Regular",
-    ContestJoined: 2,
-    contestWon: 1,
-    referral: 12, // Added referral count
-  },
-  {
-    id: "4",
-    username: "alice",
-    status: "Regular",
-    ContestJoined: 2,
-    contestWon: 1,
-    referral: 12, // Added referral count
-  },
-  {
-    id: "4",
-    username: "alice",
-    status: "Regular",
-    ContestJoined: 2,
-    contestWon: 1,
-    referral: 12, // Added referral count
-  },
-  {
-    id: "4",
-    username: "alice",
-    status: "Regular",
-    ContestJoined: 2,
-    contestWon: 1,
-    referral: 12, // Added referral count
-  },
-  {
-    id: "4",
-    username: "alice",
-    status: "Regular",
-    ContestJoined: 2,
-    contestWon: 1,
-    referral: 12, // Added referral count
-  },
-  {
-    id: "4",
-    username: "alice",
-    status: "Regular",
-    ContestJoined: 2,
-    contestWon: 1,
-    referral: 12, // Added referral count
-  },
-  {
-    id: "4",
-    username: "alice",
-    status: "Regular",
-    ContestJoined: 2,
-    contestWon: 1,
-    referral: 12, // Added referral count
-  },
-  {
-    id: "4",
-    username: "alice",
-    status: "Regular",
-    ContestJoined: 2,
-    contestWon: 1,
-    referral: 12, // Added referral count
-  },
-];
+    {
+      id: "1",
+      username: "johndoe",
+      status: "Premium",
+      ContestJoined: 5,
+      contestWon: 2,
+      referral: 10, // Added referral count
+    },
+    {
+      id: "2",
+      username: "janedoe",
+      status: "Regular",
+      ContestJoined: 3,
+      contestWon: 0,
+      referral: 5, // Added referral count
+    },
+    {
+      id: "3",
+      username: "sam_smith",
+      status: "Premium",
+      ContestJoined: 8,
+      contestWon: 3,
+      referral: 8, // Added referral count
+    },
+    {
+      id: "4",
+      username: "alice",
+      status: "Regular",
+      ContestJoined: 2,
+      contestWon: 1,
+      referral: 12, // Added referral count
+    },
+    {
+      id: "4",
+      username: "alice",
+      status: "Regular",
+      ContestJoined: 2,
+      contestWon: 1,
+      referral: 12, // Added referral count
+    },
+    {
+      id: "4",
+      username: "alice",
+      status: "Regular",
+      ContestJoined: 2,
+      contestWon: 1,
+      referral: 12, // Added referral count
+    },
+    {
+      id: "4",
+      username: "alice",
+      status: "Regular",
+      ContestJoined: 2,
+      contestWon: 1,
+      referral: 12, // Added referral count
+    },
+    {
+      id: "4",
+      username: "alice",
+      status: "Regular",
+      ContestJoined: 2,
+      contestWon: 1,
+      referral: 12, // Added referral count
+    },
+    {
+      id: "4",
+      username: "alice",
+      status: "Regular",
+      ContestJoined: 2,
+      contestWon: 1,
+      referral: 12, // Added referral count
+    },
+    {
+      id: "4",
+      username: "alice",
+      status: "Regular",
+      ContestJoined: 2,
+      contestWon: 1,
+      referral: 12, // Added referral count
+    },
+    {
+      id: "4",
+      username: "alice",
+      status: "Regular",
+      ContestJoined: 2,
+      contestWon: 1,
+      referral: 12, // Added referral count
+    },
+    {
+      id: "4",
+      username: "alice",
+      status: "Regular",
+      ContestJoined: 2,
+      contestWon: 1,
+      referral: 12, // Added referral count
+    },
+    {
+      id: "4",
+      username: "alice",
+      status: "Regular",
+      ContestJoined: 2,
+      contestWon: 1,
+      referral: 12, // Added referral count
+    },
+    {
+      id: "4",
+      username: "alice",
+      status: "Regular",
+      ContestJoined: 2,
+      contestWon: 1,
+      referral: 12, // Added referral count
+    },
+  ];
 
 // Define the user type
 export type User = {
@@ -163,104 +162,97 @@ export type User = {
   status: "Premium" | "Regular";
   ContestJoined: number;
   contestWon: number;
-  referral: number; // Added referral type
+  referral: number;
 };
 
 // Define the columns for the new data structure
-// Define the columns for the new data structure
 export const columns: ColumnDef<User>[] = [
-    {
-      id: "select",
-      header: ({ table }) => (
-        <Checkbox
-          checked={
-            table.getIsAllPageRowsSelected() ||
-            (table.getIsSomePageRowsSelected() && "indeterminate")
-          }
-          onCheckedChange={(value) => table.toggleAllPageRowsSelected(!!value)}
-          aria-label="Select all"
-        />
-      ),
-      cell: ({ row }) => (
-        <Checkbox
-          checked={row.getIsSelected()}
-          onCheckedChange={(value) => row.toggleSelected(!!value)}
-          aria-label="Select row"
-        />
-      ),
-      enableSorting: false,
-      enableHiding: false,
+  {
+    id: "select",
+    header: ({ table }) => (
+      <Checkbox
+        checked={
+          table.getIsAllPageRowsSelected() ||
+          (table.getIsSomePageRowsSelected() && "indeterminate")
+        }
+        onCheckedChange={(value) => table.toggleAllPageRowsSelected(!!value)}
+        aria-label="Select all"
+      />
+    ),
+    cell: ({ row }) => (
+      <Checkbox
+        checked={row.getIsSelected()}
+        onCheckedChange={(value) => row.toggleSelected(!!value)}
+        aria-label="Select row"
+      />
+    ),
+    enableSorting: false,
+    enableHiding: false,
+  },
+  {
+    accessorKey: "username", // Changed from avatar
+    header: "Username", // Updated header
+    cell: ({ row }) => (
+      <div className="flex items-center">
+        <span>{row.getValue("username")}</span> {/* Displaying username directly */}
+      </div>
+    ),
+  },
+  {
+    accessorKey: "status",
+    header: "Status",
+    cell: ({ row }) => <div>{row.getValue("status")}</div>,
+  },
+  {
+    accessorKey: "ContestJoined",
+    header: () => <div className="text-right">Contest Joined</div>,
+    cell: ({ row }) => (
+      <div className="text-right">{row.getValue("ContestJoined")}</div>
+    ),
+  },
+  {
+    accessorKey: "contestWon",
+    header: () => <div className="text-right">Contest Won</div>,
+    cell: ({ row }) => (
+      <div className="text-right">{row.getValue("contestWon")}</div>
+    ),
+  },
+  {
+    accessorKey: "referral",
+    header: () => <div className="text-right">Referral</div>,
+    cell: ({ row }) => (
+      <div className="text-right">{row.getValue("referral")}</div>
+    ),
+  },
+  {
+    id: "actions",
+    enableHiding: false,
+    cell: ({ row }) => {
+      const user = row.original;
+
+      return (
+        <DropdownMenu>
+          <DropdownMenuTrigger asChild>
+            <Button variant="ghost" className="h-8 w-8 p-0">
+              <span className="sr-only">Open menu</span>
+              <DotsHorizontalIcon className="h-4 w-4" />
+            </Button>
+          </DropdownMenuTrigger>
+          <DropdownMenuContent align="end">
+            {/* <DropdownMenuLabel>Actions</DropdownMenuLabel> */}
+            <DropdownMenuItem
+              onClick={() => navigator.clipboard.writeText(user.id)}
+            >
+              Copy user ID
+            </DropdownMenuItem>
+            <DropdownMenuSeparator />
+            <DropdownMenuItem>View user</DropdownMenuItem>
+          </DropdownMenuContent>
+        </DropdownMenu>
+      );
     },
-    {
-      id: "avatar",
-      header: "Avatar",
-      cell: ({ row }) => (
-        <div className="flex items-center">
-          <Avatar>
-            <AvatarImage src="https://github.com/shadcn.png" alt="@shadcn" />
-            <AvatarFallback>CN</AvatarFallback>
-          </Avatar>
-          <span className="ml-2">{row.getValue("username")}</span>
-        </div>
-      ),
-    },
-    {
-      accessorKey: "status",
-      header: "Status",
-      cell: ({ row }) => <div>{row.getValue("status")}</div>,
-    },
-    {
-      accessorKey: "ContestJoined", // Ensure this matches your data field name
-      header: () => <div className="text-right">Contest Joined</div>,
-      cell: ({ row }) => (
-        <div className="text-right">{row.getValue("ContestJoined")}</div>
-      ),
-    },
-    {
-      accessorKey: "contestWon",
-      header: () => <div className="text-right">Contest Won</div>,
-      cell: ({ row }) => (
-        <div className="text-right">{row.getValue("contestWon")}</div>
-      ),
-    },
-    {
-      accessorKey: "referral",
-      header: () => <div className="text-right">Referral</div>,
-      cell: ({ row }) => (
-        <div className="text-right">{row.getValue("referral")}</div>
-      ),
-    },
-    {
-      id: "actions",
-      enableHiding: false,
-      cell: ({ row }) => {
-        const user = row.original;
-  
-        return (
-          <DropdownMenu>
-            <DropdownMenuTrigger asChild>
-              <Button variant="ghost" className="h-8 w-8 p-0">
-                <span className="sr-only">Open menu</span>
-                <DotsHorizontalIcon className="h-4 w-4" />
-              </Button>
-            </DropdownMenuTrigger>
-            <DropdownMenuContent align="end">
-              <DropdownMenuLabel>Actions</DropdownMenuLabel>
-              <DropdownMenuItem
-                onClick={() => navigator.clipboard.writeText(user.id)}
-              >
-                Copy user ID
-              </DropdownMenuItem>
-              <DropdownMenuSeparator />
-              <DropdownMenuItem>View user</DropdownMenuItem>
-              <DropdownMenuItem>View contest details</DropdownMenuItem>
-            </DropdownMenuContent>
-          </DropdownMenu>
-        );
-      },
-    },
-  ];
-  
+  },
+];
 
 export function Analyticstable() {
   const [sorting, setSorting] = React.useState<SortingState>([]);
@@ -409,22 +401,6 @@ export function Analyticstable() {
           >
             {">>"}
           </Button>
-        </div>
-        <div>
-          <span>
-            Go to page:{" "}
-            <input
-              type="number"
-              defaultValue={table.getState().pagination.pageIndex + 1}
-              onChange={(e) => {
-                const pageNumber = e.target.value
-                  ? Number(e.target.value) - 1
-                  : 0;
-                table.setPageIndex(pageNumber);
-              }}
-              className="w-16 border"
-            />
-          </span>
         </div>
       </div>
     </div>
