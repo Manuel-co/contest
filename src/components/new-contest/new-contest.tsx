@@ -40,7 +40,7 @@ export default function Newcontest() {
   };
 
   return (
-    <div className="flex justify-center items-center h-screen">
+    <div className="flex justify-center items-center mt-3">
       <Card className="w-full max-w-3xl p-4">
         <CardHeader>
           <CardTitle>Create New Contest</CardTitle>
