@@ -13,7 +13,7 @@ import { Analyticstable } from '../../components/analytics/analyticstable';
 
 export default function Analytics() {
   return (
-    <div>
+    <div className='mx-5'>
       <PagePlaceholder pageName="Analytics" />
 
       <div className="flex justify-evenly">
