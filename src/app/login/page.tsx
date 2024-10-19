@@ -10,6 +10,7 @@ import {
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
+import Link from "next/link";
 
 export default function LoginForm() {
   const [email, setEmail] = useState("");
@@ -59,9 +60,11 @@ export default function LoginForm() {
           </form>
         </CardContent>
         <CardFooter>
-          <Button className="w-full" type="submit" onClick={handleSubmit}>
+        <Link href="/">
+          <Button className="w-full">
             Login
           </Button>
+          </Link>
         </CardFooter>
       </Card>
     </div>
