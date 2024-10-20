@@ -42,7 +42,7 @@ const chartConfig = {
 
 export function Chartcomponent() {
   return (
-    <Card className="w-[100%] h-50">
+    <Card className="w-[100%] h-50 mt-4">
       <CardHeader>
         <CardTitle>Average Sign Up</CardTitle>
         <CardDescription>January - June 2024</CardDescription>

@@ -12,9 +12,9 @@ import { Users, Gamepad2 } from 'lucide-react';
 // Sample data for the cards
 const cardData = [
   {
-    title: "Daily Active Users",
+    title: "Active Users",
     icon: <Users size={30} />,
-    count: "25,000",
+    count: "15,000",
   },
   {
     title: "Today’s Contest",
@@ -22,14 +22,14 @@ const cardData = [
     count: "20",
   },
   {
-    title: "New Users",
+    title: "Monthly Signup",
     icon: <Users size={30} />,
     count: "+1300",
   },
   {
     title: "Total Users",
     icon: <Users size={30} />,
-    count: "15,000",
+    count: "50,000",
   },
 ];
 

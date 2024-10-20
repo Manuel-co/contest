@@ -199,7 +199,7 @@ export default function Editcontest() {
           </div>
         </CardContent>
         <CardFooter>
-          <Button className="w-full">Create Contest</Button>
+          <Button className="w-full">Edit Contest</Button>
         </CardFooter>
       </Card>
     </div>

@@ -9,6 +9,8 @@ import {
   TableHeader,
   TableRow,
 } from '@/components/ui/table';
+import { Button } from './ui/button';
+import Link from 'next/link';
 
 const users = [
   {
@@ -74,7 +76,7 @@ const users = [
 
 export function Tablecontest() {
   return (
-    <Table className="w-[50%] shadow-xl m-5 ">
+    <Table className="w-[100%] h-50 shadow-xl m-5 ">
       <TableCaption>A list of recent user activity in contests.</TableCaption>
       <TableHeader>
         <TableRow>
@@ -102,12 +104,14 @@ export function Tablecontest() {
           </TableRow>
         ))}
       </TableBody>
-      {/* <TableFooter>
-          <TableRow>
-            <TableCell colSpan={3}>Total</TableCell>
-            <TableCell className="text-right">225 Contests Joined</TableCell>
-          </TableRow>
-        </TableFooter> */}
+      <Link href="/analytics">
+      <Button className='m-4 '>
+          View More
+         </Button>
+         </Link>
+      <TableFooter>
+         
+        </TableFooter>
     </Table>
   );
 }

@@ -38,7 +38,7 @@ const chartConfig = {
 
 export function Chart2component() {
   return (
-    <Card className="w-96 h-50">
+    <Card className="w-[100%] h-50 mt-4">
       <CardHeader>
         <CardTitle>Visitors</CardTitle>
         <CardDescription>
