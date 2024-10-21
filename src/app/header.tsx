@@ -23,12 +23,9 @@ import {
 import { Sheet, SheetContent } from '@/components/ui/sheet';
 import { NavItems } from '@/config';
 import { ChevronDown, Menu, Wallet } from 'lucide-react';
+import VoucherComponent from '@/components/voucher/Voucher';
 
-import {
-  Popover,
-  PopoverContent,
-  PopoverTrigger,
-} from '../../src/components/ui/popover';
+
 
 export default function Header() {
   const navItems = NavItems();
@@ -48,7 +45,7 @@ export default function Header() {
           width={40}
           height={30}
         />
-        <span>Contest</span>
+       <span className='hidden md:block text-primary'>Contest</span>
       </Link>
 
       <div className="ml-4 flex items-center gap-3">
@@ -60,24 +57,8 @@ export default function Header() {
                 <ChevronDown />
               </Button>
             </HoverCardTrigger>
-            <HoverCardContent className="w-80">
-              <div className="flex justify-between space-x-4">
-                <Avatar>
-                  <AvatarImage src="https://github.com/vercel.png" />
-                  <AvatarFallback>VC</AvatarFallback>
-                </Avatar>
-                <div className="space-y-1">
-                  <h4 className="text-sm font-semibold">@nextjs</h4>
-                  <p className="text-sm">
-                    The React Framework – created and maintained by @vercel.
-                  </p>
-                  <div className="flex items-center pt-2">
-                    <span className="text-xs text-muted-foreground">
-                      Joined December 2021
-                    </span>
-                  </div>
-                </div>
-              </div>
+            <HoverCardContent className="w-96">
+              <VoucherComponent />
             </HoverCardContent>
           </HoverCard>
         </div>
