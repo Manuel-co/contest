@@ -41,119 +41,167 @@ import {
 
 // Sample data for the table
 const data: User[] = [
-    {
-      id: "1",
-      username: "johndoe",
-      status: "Premium",
-      ContestJoined: 5,
-      contestWon: 2,
-      referral: 10, // Added referral count
-    },
-    {
-      id: "2",
-      username: "janedoe",
-      status: "Regular",
-      ContestJoined: 3,
-      contestWon: 0,
-      referral: 5, // Added referral count
-    },
-    {
-      id: "3",
-      username: "sam_smith",
-      status: "Premium",
-      ContestJoined: 8,
-      contestWon: 3,
-      referral: 8, // Added referral count
-    },
-    {
-      id: "4",
-      username: "alice",
-      status: "Regular",
-      ContestJoined: 2,
-      contestWon: 1,
-      referral: 12, // Added referral count
-    },
-    {
-      id: "4",
-      username: "alice",
-      status: "Regular",
-      ContestJoined: 2,
-      contestWon: 1,
-      referral: 12, // Added referral count
-    },
-    {
-      id: "4",
-      username: "alice",
-      status: "Regular",
-      ContestJoined: 2,
-      contestWon: 1,
-      referral: 12, // Added referral count
-    },
-    {
-      id: "4",
-      username: "alice",
-      status: "Regular",
-      ContestJoined: 2,
-      contestWon: 1,
-      referral: 12, // Added referral count
-    },
-    {
-      id: "4",
-      username: "alice",
-      status: "Regular",
-      ContestJoined: 2,
-      contestWon: 1,
-      referral: 12, // Added referral count
-    },
-    {
-      id: "4",
-      username: "alice",
-      status: "Regular",
-      ContestJoined: 2,
-      contestWon: 1,
-      referral: 12, // Added referral count
-    },
-    {
-      id: "4",
-      username: "alice",
-      status: "Regular",
-      ContestJoined: 2,
-      contestWon: 1,
-      referral: 12, // Added referral count
-    },
-    {
-      id: "4",
-      username: "alice",
-      status: "Regular",
-      ContestJoined: 2,
-      contestWon: 1,
-      referral: 12, // Added referral count
-    },
-    {
-      id: "4",
-      username: "alice",
-      status: "Regular",
-      ContestJoined: 2,
-      contestWon: 1,
-      referral: 12, // Added referral count
-    },
-    {
-      id: "4",
-      username: "alice",
-      status: "Regular",
-      ContestJoined: 2,
-      contestWon: 1,
-      referral: 12, // Added referral count
-    },
-    {
-      id: "4",
-      username: "alice",
-      status: "Regular",
-      ContestJoined: 2,
-      contestWon: 1,
-      referral: 12, // Added referral count
-    },
-  ];
+  {
+    id: "1",
+    username: "john_smith",
+    status: "Premium",
+    ContestJoined: 5,
+    contestWon: 2,
+    referral: 10,
+  },
+  {
+    id: "2",
+    username: "jane_williams",
+    status: "Regular",
+    ContestJoined: 3,
+    contestWon: 0,
+    referral: 5,
+  },
+  {
+    id: "3",
+    username: "michael_jones",
+    status: "Premium",
+    ContestJoined: 8,
+    contestWon: 3,
+    referral: 8,
+  },
+  {
+    id: "4",
+    username: "emily_brown",
+    status: "Regular",
+    ContestJoined: 2,
+    contestWon: 1,
+    referral: 12,
+  },
+  {
+    id: "5",
+    username: "charles_davis",
+    status: "Regular",
+    ContestJoined: 7,
+    contestWon: 2,
+    referral: 15,
+  },
+  {
+    id: "6",
+    username: "lucy_evans",
+    status: "Premium",
+    ContestJoined: 10,
+    contestWon: 4,
+    referral: 20,
+  },
+  {
+    id: "7",
+    username: "oliver_clark",
+    status: "Regular",
+    ContestJoined: 3,
+    contestWon: 1,
+    referral: 6,
+  },
+  {
+    id: "8",
+    username: "isabella_martin",
+    status: "Premium",
+    ContestJoined: 6,
+    contestWon: 3,
+    referral: 9,
+  },
+  {
+    id: "9",
+    username: "liam_turner",
+    status: "Regular",
+    ContestJoined: 4,
+    contestWon: 1,
+    referral: 8,
+  },
+  {
+    id: "10",
+    username: "sophia_wright",
+    status: "Premium",
+    ContestJoined: 9,
+    contestWon: 5,
+    referral: 18,
+  },
+  {
+    id: "11",
+    username: "james_harris",
+    status: "Regular",
+    ContestJoined: 3,
+    contestWon: 0,
+    referral: 7,
+  },
+  {
+    id: "12",
+    username: "ava_roberts",
+    status: "Premium",
+    ContestJoined: 8,
+    contestWon: 4,
+    referral: 10,
+  },
+  {
+    id: "13",
+    username: "william_king",
+    status: "Regular",
+    ContestJoined: 5,
+    contestWon: 2,
+    referral: 12,
+  },
+  {
+    id: "14",
+    username: "mia_thompson",
+    status: "Premium",
+    ContestJoined: 11,
+    contestWon: 6,
+    referral: 25,
+  },
+  {
+    id: "15",
+    username: "noah_moore",
+    status: "Regular",
+    ContestJoined: 4,
+    contestWon: 1,
+    referral: 11,
+  },
+  {
+    id: "16",
+    username: "amelia_jackson",
+    status: "Premium",
+    ContestJoined: 9,
+    contestWon: 4,
+    referral: 14,
+  },
+  {
+    id: "17",
+    username: "logan_martinez",
+    status: "Regular",
+    ContestJoined: 3,
+    contestWon: 0,
+    referral: 4,
+  },
+  {
+    id: "18",
+    username: "harper_lopez",
+    status: "Premium",
+    ContestJoined: 7,
+    contestWon: 3,
+    referral: 17,
+  },
+  {
+    id: "19",
+    username: "jackson_anderson",
+    status: "Regular",
+    ContestJoined: 6,
+    contestWon: 2,
+    referral: 13,
+  },
+  {
+    id: "20",
+    username: "evelyn_scott",
+    status: "Premium",
+    ContestJoined: 10,
+    contestWon: 5,
+    referral: 20,
+  },
+];
 
 // Define the user type
 export type User = {
