@@ -40,7 +40,7 @@ export default function LoginForm() {
   };
 
   return (
-    <div className="flex justify-center items-center h-screen">
+    <div className="flex justify-center items-center mt-[100px]">
       <Card className="w-full max-w-md p-4">
         <CardHeader>
           <img src="/logo.svg" alt="logo" className="h-8 w-auto" />
