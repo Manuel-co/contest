@@ -16,9 +16,8 @@ import { Piecharrtomponent } from '@/components/piecharrt';
 
 export default function Analytics() {
   return (
-    <div className='mx-5'>
-      <PagePlaceholder pageName="Analytics" />
-
+    <div className='m-5'>
+      {/* <PagePlaceholder pageName="Analytics"  /> */}
       <div className="flex justify-evenly">
         <Analyticscard />
       </div>
