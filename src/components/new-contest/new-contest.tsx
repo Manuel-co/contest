@@ -20,10 +20,21 @@ import {
   SelectTrigger,
   SelectValue,
 } from '@/components/ui/select';
-import { CalendarIcon, CheckIcon, Star } from 'lucide-react';
+import { CalendarIcon, CheckIcon } from 'lucide-react';
 import DatePicker from 'react-datepicker';
 
 import 'react-datepicker/dist/react-datepicker.css';
+
+import {
+  Barcode,
+  Image,
+  Link,
+  Receipt1,
+  Star,
+  TimerStart,
+  VideoAdd,
+  WalletMoney,
+} from 'iconsax-react';
 
 export default function Newcontest() {
   const [startDate, setStartDate] = useState<Date | undefined>(undefined);
@@ -58,7 +69,9 @@ export default function Newcontest() {
 
           {/* Start Time */}
           <div>
-            <Label htmlFor="start-time">Start Time</Label>
+            <Label htmlFor="start-time" className="text-sm font-medium flex items-center">
+              Start Time <TimerStart className="ml-1"  />
+            </Label>
             <div className="relative">
               <DatePicker
                 selected={startDate}
@@ -76,7 +89,7 @@ export default function Newcontest() {
 
           {/* Tags */}
           <div className="space-y-2">
-            <label className="text-sm font-medium text-gray-400">Tags</label>
+            <label className="text-sm font-medium ">Tags</label>
             <div className="flex flex-wrap gap-2">
               {tags.map((tag) => (
                 <Button
@@ -104,25 +117,46 @@ export default function Newcontest() {
 
           {/* Video URL */}
           <div>
-            <Label htmlFor="video-url">Video URL</Label>
+            <Label
+              htmlFor="video-url"
+              className="text-sm font-medium flex items-center"
+            >
+              Video URL
+              <VideoAdd className="ml-1" />
+            </Label>
             <Input id="video-url" placeholder="Enter video URL" />
           </div>
 
           {/* Feed Image URL */}
           <div>
-            <Label htmlFor="feed-image-url">Feed Image URL</Label>
+            <Label
+              htmlFor="feed-image-url"
+              className="text-sm font-medium flex items-center"
+            >
+              Feed Image URL <Image className="ml-1" />
+            </Label>
             <Input id="feed-image-url" placeholder="Enter feed image URL" />
           </div>
 
           {/* Reference URL */}
           <div>
-            <Label htmlFor="reference-url">Reference URL</Label>
+            <Label
+              htmlFor="reference-url"
+              className="text-sm font-medium flex items-center"
+            >
+              Reference URL <Link className="ml-1" />
+            </Label>
             <Input id="reference-url" placeholder="Enter reference URL" />
           </div>
 
           {/* Currency */}
           <div>
-            <Label htmlFor="currency">Currency</Label>
+            <Label
+              htmlFor="currency"
+              className="text-sm font-medium flex items-center"
+            >
+              Currency <WalletMoney className="ml-1" />
+            </Label>
             <Select>
               <SelectTrigger>
                 <SelectValue placeholder="USD" />
@@ -142,7 +176,12 @@ export default function Newcontest() {
 
           {/* Product Code */}
           <div>
-            <Label htmlFor="product-code">Product Code</Label>
+            <Label
+              htmlFor="product-code"
+              className="text-sm font-medium flex items-center"
+            >
+              Product Code <Barcode className="ml-1" />
+            </Label>
             <Input id="product-code" placeholder="Enter product code" />
           </div>
 
@@ -162,7 +201,12 @@ export default function Newcontest() {
 
           {/* Amount */}
           <div>
-            <Label htmlFor="amount">Amount</Label>
+            <Label
+              htmlFor="amount"
+              className="text-sm font-medium flex items-center"
+            >
+              Amount <Receipt1 className="ml-1" />
+            </Label>
             <Input id="amount" placeholder="Enter amount" />
           </div>
 
@@ -189,7 +233,8 @@ export default function Newcontest() {
             <div className="flex items-center space-x-2">
               <Checkbox id="premium" />
               <Label htmlFor="premium" className="flex items-center space-x-1">
-                Premium <Star className="w-5 h-5" />
+                <span>Premium</span>
+                <Star className="w-5 h-5" />
               </Label>
             </div>
             <div className="flex items-center space-x-2">

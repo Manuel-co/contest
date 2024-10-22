@@ -1,4 +1,5 @@
 import * as React from 'react';
+
 import { Button } from '@/components/ui/button';
 import {
   Card,
@@ -7,24 +8,25 @@ import {
   CardHeader,
   CardTitle,
 } from '@/components/ui/card';
+import { Game, Profile2User } from 'iconsax-react';
 import { Gamepad2, Users } from 'lucide-react';
 
 // Data for the cards
 const cardData = [
   {
-    title: "Today’s User",
-    icon: <Users size={30} />,
-    count: "25,000",
+    title: 'Today’s User',
+    icon: <Profile2User size={30} />,
+    count: '25,000',
   },
   {
-    title: "Today’s Contest",
-    icon: <Gamepad2 size={30} />,
-    count: "300",
+    title: 'Today’s Contest',
+    icon: <Game size={30} />,
+    count: '300',
   },
   {
-    title: "New Users",
-    icon: <Users size={30} />,
-    count: "+1300",
+    title: 'New Users',
+    icon: <Profile2User size={30} />,
+    count: '+1300',
   },
 ];
 

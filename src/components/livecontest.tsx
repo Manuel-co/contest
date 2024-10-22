@@ -8,27 +8,27 @@ import {
   CardTitle,
 } from '@/components/ui/card';
 import { Users, Gamepad2 } from 'lucide-react';
-
+import { Game, Profile2User  } from 'iconsax-react';
 // Sample data for the cards
 const cardData = [
   {
     title: "Active Users",
-    icon: <Users size={30} />,
+    icon: <Profile2User size="30" />,
     count: "15,000",
   },
   {
     title: "Today’s Contest",
-    icon: <Gamepad2 size={30} />,
+    icon: <Game size="32" />,
     count: "20",
   },
   {
     title: "Monthly Signup",
-    icon: <Users size={30} />,
+    icon: <Profile2User size={30} />,
     count: "+1300",
   },
   {
     title: "Total Users",
-    icon: <Users size={30} />,
+    icon: <Profile2User size={30} />,
     count: "50,000",
   },
 ];

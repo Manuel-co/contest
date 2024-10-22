@@ -9,9 +9,10 @@ import {
   CardHeader,
   CardTitle,
 } from '@/components/ui/card';
-import { Bot, User, Gamepad2, Receipt, Bell, Lock, Unlock } from 'lucide-react';
+import { Bot, User, Gamepad2, Receipt, Bell, } from 'lucide-react';
 
 import 'react-datepicker/dist/react-datepicker.css';
+import { Lock1, Unlock, Notification, UsdCoin, Profile2User } from 'iconsax-react';
 
 export default function Allcontest() {
   // Initial state for cards
@@ -95,14 +96,14 @@ export default function Allcontest() {
                 </span>
               </div>
               <div className="flex mb-2">
-                <User />
+                <Profile2User />
                 <span className="ml-2">
                   {' '}
                   <strong>0/10 </strong>Bots
                 </span>
               </div>
               <div className="flex mb-2">
-                <Receipt />
+                <UsdCoin />
                 <span className="ml-2">
                   {' '}
                   <strong>0/10 </strong>players
@@ -110,7 +111,7 @@ export default function Allcontest() {
               </div>
               <div className="flex justify-between mb-2">
                 <div className="flex">
-                  <Bell />
+                  <Notification />
                   <span className="ml-2">
                     {' '}
                     <strong>0/10 </strong>Subscribed
@@ -132,12 +133,12 @@ export default function Allcontest() {
                   </>
                 ) : (
                   <>
-                    <Lock className="mr-2" /> Lock
+                    <Lock1 className="mr-2" /> Lock
                   </>
                 )}
               </button>
               <button className="flex items-center border-2 rounded-md hover:border-red-500 px-5 py-3">
-                Notify <Bell className="ml-2" />
+                Notify <Notification className="ml-2" />
               </button>
             </CardFooter>
           </Card>

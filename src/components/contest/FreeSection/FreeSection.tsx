@@ -14,6 +14,7 @@ import {
 } from '@/components/ui/card';
 import { Receipt, SquarePen } from 'lucide-react';
 import Link from 'next/link';
+import { Edit, UsdCoin } from 'iconsax-react';
 
 export function FreeSection() {
   // Initial state for cards
@@ -67,7 +68,8 @@ export function FreeSection() {
                 />
               </div>
               <div className="flex items-center">
-                <Receipt className="mr-2" />
+                <UsdCoin className="mr-2" />
+                
                 <span>
                   <strong>USD 100</strong>Price
                 </span>
@@ -78,7 +80,7 @@ export function FreeSection() {
                 <Button className="w-full justify-center">
                   Edit{' '}
                   <span>
-                    <SquarePen />
+                    <Edit />
                   </span>
                 </Button>
               </Link>

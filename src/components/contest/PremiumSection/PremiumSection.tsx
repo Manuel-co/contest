@@ -13,6 +13,7 @@ import {
 } from '@/components/ui/card';
 import { Receipt, SquarePen } from 'lucide-react';
 import Link from 'next/link';
+import { Edit, UsdCoin } from 'iconsax-react';
 
 export function PremiumSection() {
   // Initial state for cards
@@ -72,7 +73,8 @@ export function PremiumSection() {
             </CardContent>
             <CardContent>
               <div className="flex items-center justify-between">
-                <Receipt className="mr-2" />
+                {/* <Receipt className="mr-2" /> */}
+                <UsdCoin className="mr-2" />
                 <span>
                   <strong>USD 100</strong> Price
                 </span>
@@ -81,7 +83,7 @@ export function PremiumSection() {
             <CardFooter>
               <Link href="/edit" className="w-full">
                 <Button className="w-full justify-center">
-                  Edit <SquarePen className="ml-2" />
+                  Edit <Edit className="ml-2" />
                 </Button>
               </Link>
             </CardFooter>

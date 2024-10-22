@@ -51,6 +51,7 @@
 import { usePathname } from 'next/navigation';
 
 import { Bot, Kanban, Gamepad2, Home,  Plus, Check  } from 'lucide-react';
+import { Activity, Additem, HomeTrendUp, LampCharge } from 'iconsax-react';
 
 export const NavItems = () => {
   const pathname = usePathname();
@@ -63,7 +64,7 @@ export const NavItems = () => {
     {
       name: 'Home',
       href: '/',
-      icon: <Home size={20} />,
+      icon: <HomeTrendUp size={20} />,
       active: pathname === '/',
       position: 'top',
     },
@@ -77,14 +78,14 @@ export const NavItems = () => {
     {
       name: 'New-contest',
       href: '/new-contest',
-      icon: < Plus  size={20} />,
+      icon: < Additem  size={20} />,
       active: isNavItemActive(pathname, '/new-contest'),
       position: 'top',
     },
     {
       name: 'Active-contest',
       href: '/active-contest',
-      icon: <Check  size={20} />,
+      icon: <LampCharge  size={20} />,
       active: isNavItemActive(pathname, '/active-contest'),
       position: 'top',
     },
@@ -98,7 +99,7 @@ export const NavItems = () => {
       {
       name: 'Analytics',
       href: '/analytics',
-      icon: <Kanban size={20} />,
+      icon: <Activity size={20} />,
       active: isNavItemActive(pathname, '/analytics'),
       position: 'top',
     },

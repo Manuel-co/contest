@@ -4,7 +4,7 @@ import { Filter } from 'lucide-react';
 
 const VoucherComponent: React.FC = () => {
   return (
-    <div className="  p-6 rounded-lg max-w-lg mx-auto shadow-lg">
+    <div className="  p-6 rounded-lg max-w-lg mx-auto ">
       {/* Top Section: Total Vouchers */}
       <div className="border-b border-red-500 pb-4 mb-4">
         <div className="flex items-center space-x-2">
@@ -29,7 +29,7 @@ const VoucherComponent: React.FC = () => {
             className="flex   rounded-lg px-1 py-2 focus:outline-none"
             placeholder="Search Voucher"
           />
-          <button className="flex ml-2 bg-red-500  px-3 py-2 rounded-lg">
+          <button className="flex ml-2   px-3 py-2 rounded-lg">
             <Filter /> <span>ALL</span>
           </button>
         </div>
