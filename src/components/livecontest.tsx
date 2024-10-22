@@ -35,7 +35,7 @@ const cardData = [
 
 export function Contestcard() {
   return (
-    <div className="grid grid-cols-2 gap-6">
+    <div className="grid grid-cols-2 gap-6 mt-4">
       {cardData.map((card, index) => (
         <Card key={index} className="w-full">
           <CardHeader>
