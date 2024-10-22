@@ -70,7 +70,7 @@ export default function Newcontest() {
           {/* Start Time */}
           <div>
             <Label htmlFor="start-time" className="text-sm font-medium flex items-center">
-              Start Time <TimerStart className="ml-1"  />
+              Start-Time <TimerStart className="ml-1"  />
             </Label>
             <div className="relative">
               <DatePicker
