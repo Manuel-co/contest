@@ -9,9 +9,10 @@ import {
   CardHeader,
   CardTitle,
 } from '@/components/ui/card';
-import { Bot, User, Receipt, Bell, Lock, Unlock } from 'lucide-react';
+import { Bot, } from 'lucide-react';
 
 import 'react-datepicker/dist/react-datepicker.css';
+import { NotificationBing, Lock, Unlock, UsdCoin, Profile2User  } from 'iconsax-react';
 
 export default function AllContest() {
   // Initial state for cards
@@ -95,7 +96,7 @@ export default function AllContest() {
                         {card.title}
                       </CardTitle>
                       <CardDescription>
-                        <button className="text-gray-600 hover:text-gray-900 transition-colors">
+                        <button className=" transition-colors">
                           {card.description}
                         </button>
                       </CardDescription>
@@ -104,31 +105,31 @@ export default function AllContest() {
                 </CardHeader>
                 <CardContent className="space-y-4">
                   <div className="flex items-center">
-                    <Bot className="text-gray-500" />
-                    <span className="ml-2 text-sm text-gray-700">
+                    <Bot className="" />
+                    <span className="ml-2 text-sm ">
                       <strong>0/10</strong> Players
                     </span>
                   </div>
                   <div className="flex items-center">
-                    <User className="text-gray-500" />
-                    <span className="ml-2 text-sm text-gray-700">
+                    <Profile2User className="" />
+                    <span className="ml-2 text-sm ">
                       <strong>0/10</strong> Bots
                     </span>
                   </div>
                   <div className="flex items-center">
-                    <Receipt className="text-gray-500" />
-                    <span className="ml-2 text-sm text-gray-700">
+                    <UsdCoin className="" />
+                    <span className="ml-2 text-sm ">
                       <strong>0/10</strong> Receipts
                     </span>
                   </div>
                   <div className="flex justify-between items-center">
                     <div className="flex items-center">
-                      <Bell className="text-gray-500" />
-                      <span className="ml-2 text-sm text-gray-700">
+                      <NotificationBing className="" />
+                      <span className="ml-2 text-sm ">
                         <strong>0/10</strong> Subscribed
                       </span>
                     </div>
-                    <span className="text-sm text-gray-500">Starting soon</span>
+                    <span className="text-sm ">Starting soon</span>
                   </div>
                 </CardContent>
                 <CardFooter className="flex flex-col sm:flex-row justify-between items-center mt-4 space-y-3 sm:space-y-0">
@@ -148,8 +149,8 @@ export default function AllContest() {
                       </>
                     )}
                   </button>
-                  <button className="w-full flex items-center justify-center border-2 border-gray-300 rounded-lg hover:bg-gray-100 px-5 py-2 text-gray-600 transition-all duration-200 ease-in-out">
-                    Notify <Bell className="ml-2" />
+                  <button className="w-full flex items-center justify-center border-2  rounded-lg  px-5 py-2  transition-all duration-200 ease-in-out">
+                    Notify <NotificationBing className="ml-2" />
                   </button>
                 </CardFooter>
               </Card>
