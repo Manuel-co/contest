@@ -18,6 +18,7 @@ export default function Dashboard() {
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         <Contestcard />
         <Chart2component />
+        
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-5">
         <Chartcomponent />
