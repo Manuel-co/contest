@@ -44,6 +44,20 @@ export default function AllContest() {
       imgSrc: '/coinflip.gif',
       locked: false,
     },
+    {
+      id: 5,
+      title: 'Farm Contest',
+      description: 'Farm Contest',
+      imgSrc: '/coinflip.gif',
+      locked: true,
+    },
+    {
+      id: 6,
+      title: 'Farm Contest',
+      description: 'Farm Contest',
+      imgSrc: '/coinflip.gif',
+      locked: true,
+    },
   ];
 
   // Use state to store card data, with lock/unlock state
