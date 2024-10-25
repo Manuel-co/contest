@@ -26,14 +26,7 @@ import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 
 import {
-  Barcode,
-  Image,
-  Link,
-  Receipt1,
   Star,
-  TimerStart,
-  VideoAdd,
-  WalletMoney,
 } from 'iconsax-react';
 
 export default function Newcontest() {
@@ -70,7 +63,8 @@ export default function Newcontest() {
           {/* Start Time */}
           <div>
             <Label htmlFor="start-time" className="text-sm font-medium flex items-center">
-              Start-Time <TimerStart className="ml-1"  />
+              Start-Time 
+              {/* <TimerStart className="ml-1"  /> */}
             </Label>
             <div className="relative">
               <DatePicker
@@ -122,7 +116,7 @@ export default function Newcontest() {
               className="text-sm font-medium flex items-center"
             >
               Video URL
-              <VideoAdd className="ml-1" />
+              {/* <VideoAdd className="ml-1" /> */}
             </Label>
             <Input id="video-url" placeholder="Enter video URL" />
           </div>
@@ -133,7 +127,8 @@ export default function Newcontest() {
               htmlFor="feed-image-url"
               className="text-sm font-medium flex items-center"
             >
-              Feed Image URL <Image className="ml-1" />
+              Feed Image URL
+               {/* <Image className="ml-1" /> */}
             </Label>
             <Input id="feed-image-url" placeholder="Enter feed image URL" />
           </div>
@@ -144,7 +139,8 @@ export default function Newcontest() {
               htmlFor="reference-url"
               className="text-sm font-medium flex items-center"
             >
-              Reference URL <Link className="ml-1" />
+              Reference URL
+               {/* <Link className="ml-1" /> */}
             </Label>
             <Input id="reference-url" placeholder="Enter reference URL" />
           </div>
@@ -155,7 +151,8 @@ export default function Newcontest() {
               htmlFor="currency"
               className="text-sm font-medium flex items-center"
             >
-              Currency <WalletMoney className="ml-1" />
+              Currency
+              {/* <WalletMoney className="ml-1" /> */}
             </Label>
             <Select>
               <SelectTrigger>
@@ -180,7 +177,8 @@ export default function Newcontest() {
               htmlFor="product-code"
               className="text-sm font-medium flex items-center"
             >
-              Product Code <Barcode className="ml-1" />
+              Product Code 
+              {/* <Barcode className="ml-1" /> */}
             </Label>
             <Input id="product-code" placeholder="Enter product code" />
           </div>
@@ -205,7 +203,8 @@ export default function Newcontest() {
               htmlFor="amount"
               className="text-sm font-medium flex items-center"
             >
-              Amount <Receipt1 className="ml-1" />
+              Amount 
+              {/* <Receipt1 className="ml-1" /> */}
             </Label>
             <Input id="amount" placeholder="Enter amount" />
           </div>
