@@ -6,7 +6,7 @@ import { Progress } from '@radix-ui/react-progress';
 import { Button } from '../ui/button';
 
 // Importing icons from Lucide
-import { Pause, Play, StopCircle } from 'lucide-react';
+import { Rewind, Play, StopCircle } from 'lucide-react';
 
 const WinningProduct = () => {
   const [progress, setProgress] = useState(70); // Countdown starts from 7 seconds (70% progress)
@@ -18,16 +18,21 @@ const WinningProduct = () => {
     if (isCounting && progress > 0 && !isStopped) {
       const timer = setInterval(() => {
         setProgress((prev) => Math.max(0, prev - 1)); // Decrease progress by 1% each second
-      }, 1000);
+      }, 100);
 
       return () => clearInterval(timer);
     }
   }, [isCounting, progress, isStopped]);
 
   // Restart the countdown
+  // const handleRestart = () => {
+  //   setIsStopped(false); // Ensure contest isn't stopped
+  //   setIsCounting((prev) => !prev); // Toggle between pause and restart
+  // };
   const handleRestart = () => {
     setIsStopped(false); // Ensure contest isn't stopped
-    setIsCounting((prev) => !prev); // Toggle between pause and restart
+    setProgress(70); // Reset progress to the initial value (70%)
+    setIsCounting(true); // Ensure the countdown starts again
   };
 
   // Stop the countdown
@@ -82,11 +87,11 @@ const WinningProduct = () => {
           <Button onClick={handleRestart}>
             {isCounting ? (
               <>
-                <Pause className="mr-2 h-4 w-4" /> Pause
+                <Rewind className="mr-2 h-4 w-4" /> Restart
               </>
             ) : (
               <>
-                <Play className="mr-2 h-4 w-4" /> Restart
+                <Play className="mr-2 h-4 w-4" /> Start
               </>
             )}
           </Button>
