@@ -3,6 +3,7 @@
 import { useState } from 'react';
 
 import { Button } from '@/components/ui/button';
+import { Calendar } from '@/components/ui/calendar';
 import {
   Card,
   CardContent,
@@ -14,25 +15,60 @@ import { Checkbox } from '@/components/ui/checkbox';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import {
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
+} from '@/components/ui/popover';
+import {
   Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
   SelectValue,
 } from '@/components/ui/select';
-import { CalendarIcon, CheckIcon } from 'lucide-react';
-import DatePicker from 'react-datepicker';
+import { cn } from '@/lib/utils';
+import { format } from 'date-fns';
+import { Calendar as CalendarIcon, CheckIcon } from 'lucide-react';
 
 import 'react-datepicker/dist/react-datepicker.css';
 
-import {
-  Star,
-} from 'iconsax-react';
+import React from 'react';
+
+import { Star } from 'iconsax-react';
 
 export default function Newcontest() {
-  const [startDate, setStartDate] = useState<Date | undefined>(undefined);
-  const [selectedTags, setSelectedTags] = useState<string[]>([]);
+  const [date, setDate] = useState<Date | undefined>(undefined);
+  const [hours, setHours] = useState('');
+  const [minutes, setMinutes] = useState('');
+  const [period, setPeriod] = useState('AM'); // Default is AM
 
+  // Handle hours change
+  const handleHoursChange = (e: { target: { value: any } }) => {
+    const value = e.target.value;
+    if (value >= 1 && value <= 12) {
+      setHours(value);
+    }
+  };
+
+  // Handle minutes change
+  const handleMinutesChange = (e: { target: { value: any } }) => {
+    const value = e.target.value;
+    if (value >= 0 && value < 60) {
+      setMinutes(value);
+    }
+  };
+
+  // Handle AM/PM change
+  const handlePeriodChange = (value: React.SetStateAction<string>) => {
+    setPeriod(value);
+  };
+
+  // Format time
+  const formattedTime =
+    hours && minutes ? `${hours}:${minutes.padStart(2, '0')} ${period}` : '';
+
+  // Tags
+  const [selectedTags, setSelectedTags] = useState<string[]>([]);
   const tags = ['Farming', 'Promo'];
 
   const toggleTag = (tag: string) => {
@@ -62,18 +98,74 @@ export default function Newcontest() {
 
           {/* Start Time */}
           <div>
-            <Label htmlFor="start-time" className="text-sm font-medium flex items-center">
-              Start-Time 
+            <Label
+              htmlFor="start-time"
+              className="text-sm font-medium flex items-center"
+            >
+              Start-Time
               {/* <TimerStart className="ml-1"  /> */}
             </Label>
             <div className="relative">
-              <DatePicker
-                selected={startDate}
-                onChange={(date) => setStartDate(date ?? undefined)} // Convert null to undefined
-                showTimeSelect
-                dateFormat="dd/MM/yyyy HH:mm"
-                className="w-full p-2 rounded-md"
-              />
+              <Popover>
+                <PopoverTrigger asChild>
+                  <Button
+                    variant={'outline'}
+                    className={cn(
+                      'w-full justify-start text-left font-normal',
+                      !date && 'text-muted-foreground',
+                    )}
+                  >
+                    <CalendarIcon className="mr-2" />
+                    {date ? (
+                      `${format(date, 'PPP')} ${formattedTime ? `at ${formattedTime}` : ''}`
+                    ) : (
+                      <span>Pick a date and time</span>
+                    )}
+                  </Button>
+                </PopoverTrigger>
+                <PopoverContent className="w-auto p-0" align="start">
+                  <Calendar
+                    mode="single"
+                    selected={date}
+                    onSelect={setDate} // Now accepts Date | undefined
+                    initialFocus
+                  />
+
+                  {/* Time Picker */}
+                  <div className="flex justify-evenly pb-5">
+                    {/* Hours Input */}
+                    <Input
+                      type="number"
+                      className="w-14"
+                      value={hours}
+                      onChange={handleHoursChange}
+                      placeholder="HH"
+                      min="1"
+                      max="12"
+                    />
+                    {/* Minutes Input */}
+                    <Input
+                      type="number"
+                      className="w-14"
+                      value={minutes}
+                      onChange={handleMinutesChange}
+                      placeholder="MM"
+                      min="0"
+                      max="59"
+                    />
+                    {/* AM/PM Selector */}
+                    <Select value={period} onValueChange={handlePeriodChange}>
+                      <SelectTrigger className="w-18">
+                        <SelectValue placeholder="AM" />
+                      </SelectTrigger>
+                      <SelectContent>
+                        <SelectItem value="AM">AM</SelectItem>
+                        <SelectItem value="PM">PM</SelectItem>
+                      </SelectContent>
+                    </Select>
+                  </div>
+                </PopoverContent>
+              </Popover>
 
               {/* <span className="absolute right-2 top-3 text-gray-400">
                   <CalendarIcon />
@@ -128,7 +220,7 @@ export default function Newcontest() {
               className="text-sm font-medium flex items-center"
             >
               Feed Image URL
-               {/* <Image className="ml-1" /> */}
+              {/* <Image className="ml-1" /> */}
             </Label>
             <Input id="feed-image-url" placeholder="Enter feed image URL" />
           </div>
@@ -140,7 +232,7 @@ export default function Newcontest() {
               className="text-sm font-medium flex items-center"
             >
               Reference URL
-               {/* <Link className="ml-1" /> */}
+              {/* <Link className="ml-1" /> */}
             </Label>
             <Input id="reference-url" placeholder="Enter reference URL" />
           </div>
@@ -177,7 +269,7 @@ export default function Newcontest() {
               htmlFor="product-code"
               className="text-sm font-medium flex items-center"
             >
-              Product Code 
+              Product Code
               {/* <Barcode className="ml-1" /> */}
             </Label>
             <Input id="product-code" placeholder="Enter product code" />
@@ -203,7 +295,7 @@ export default function Newcontest() {
               htmlFor="amount"
               className="text-sm font-medium flex items-center"
             >
-              Amount 
+              Amount
               {/* <Receipt1 className="ml-1" /> */}
             </Label>
             <Input id="amount" placeholder="Enter amount" />
