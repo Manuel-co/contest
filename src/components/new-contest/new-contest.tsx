@@ -88,9 +88,9 @@ export default function Newcontest() {
 
   return (
     <div className="flex justify-center items-center mt-3 px-4">
-      <Card className="w-full max-w-3xl p-6 shadow-lg rounded-lg bg-white">
+      <Card className="w-full max-w-3xl p-6 shadow-lg rounded-lg ">
         <CardHeader>
-          <CardTitle className="text-center text-xl font-semibold text-gray-800">Create New Contest</CardTitle>
+          <CardTitle className="text-center text-xl font-semibold ">Create New Contest</CardTitle>
         </CardHeader>
         <CardContent className="flex flex-col gap-4">
           {/* Product Name */}
@@ -298,7 +298,7 @@ export default function Newcontest() {
           </div>
         </CardContent>
         <CardFooter>
-          <Button className="w-full bg-blue-600 hover:bg-blue-700 text-white" onClick={handleSubmit}>
+          <Button className="w-full" onClick={handleSubmit}>
             Create Contest
           </Button>
         </CardFooter>

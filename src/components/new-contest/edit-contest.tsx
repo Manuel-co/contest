@@ -89,9 +89,9 @@ export default function Newcontest() {
 
   return (
     <div className="flex justify-center items-center mt-3 px-4">
-      <Card className="w-full max-w-3xl p-6 shadow-lg rounded-lg bg-white">
+      <Card className="w-full max-w-3xl p-6 shadow-lg rounded-lg ">
         <CardHeader>
-          <CardTitle className="text-center text-xl font-semibold text-gray-800">
+          <CardTitle className="text-center text-xl font-semibold ">
             Edit Contest
           </CardTitle>
         </CardHeader>
@@ -355,7 +355,7 @@ export default function Newcontest() {
         </CardContent>
         <CardFooter>
           <Button
-            className="w-full bg-blue-600 hover:bg-blue-700 text-white"
+            className="w-full "
             onClick={handleSubmit}
           >
             Create Contest
