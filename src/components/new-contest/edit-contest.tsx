@@ -38,6 +38,18 @@ export default function Newcontest() {
   const [period, setPeriod] = useState('AM');
   const [selectedTags, setSelectedTags] = useState<string[]>([]);
   const [formErrors, setFormErrors] = useState<{ [key: string]: string }>({});
+  const [productName, setProductName] = useState('');
+  const [category, setCategory] = useState('');
+  const [campaign, setCampaign] = useState('');
+
+  const [imageUrl, setImageUrl] = useState('');
+  const [feedUrl, setFeedUrl] = useState('');
+  const [videoUrl, setVideoUrl] = useState('');
+  const [referenceUrl, setReferenceUrl] = useState('');
+
+  const [premiumChecked, setPremiumChecked] = useState(false);
+  const [payTokenContestChecked, setPayTokenContestChecked] = useState(false);
+
   const tags = ['Farming', 'Promo'];
 
   const handleHoursChange = (e: { target: { value: any } }) => {
@@ -68,14 +80,44 @@ export default function Newcontest() {
       setSelectedTags([...selectedTags, tag]);
     }
   };
+  const handlePremiumChange = (checked: boolean | "indeterminate") => {
+    if (typeof checked === "boolean") {
+      setPremiumChecked(checked);
+    }
+  };
+  
+  const handlePayTokenContestChange = (checked: boolean | "indeterminate") => {
+    if (typeof checked === "boolean") {
+      setPayTokenContestChecked(checked);
+    }
+  };
 
   const validateForm = () => {
     const errors: { [key: string]: string } = {};
 
+    if (!productName) errors.productName = 'Product name is required.';
     if (!date) errors.date = 'Start time is required.';
     if (!hours || !minutes) errors.time = 'Time is required.';
     if (selectedTags.length === 0)
       errors.tags = 'At least one tag is required.';
+    if (!category) errors.category = 'Category is required.';
+    if (!campaign) errors.campaign = 'Campaign is required.';
+    if (!premiumChecked && !payTokenContestChecked)
+      errors.checkboxes = 'At least one checkbox must be selected.';
+
+    // URL Validation
+    if (imageUrl && !/^https?:\/\/.+/i.test(imageUrl)) {
+      errors.imageUrl = 'Please enter a valid URL.';
+    }
+    if (feedUrl && !/^https?:\/\/.+/i.test(feedUrl)) {
+      errors.feedUrl = 'Please enter a valid URL.';
+    }
+    if (videoUrl && !/^https?:\/\/.+/i.test(videoUrl)) {
+      errors.videoUrl = 'Please enter a valid URL.';
+    }
+    if (referenceUrl && !/^https?:\/\/.+/i.test(referenceUrl)) {
+      errors.referenceUrl = 'Please enter a valid URL.';
+    }
 
     setFormErrors(errors);
     return Object.keys(errors).length === 0;
@@ -104,9 +146,15 @@ export default function Newcontest() {
             <Input
               id="product-name"
               placeholder="Enter product name"
-              required
+              value={productName}
+              onChange={(e) => setProductName(e.target.value)}
               className="mt-1"
             />
+            {formErrors.productName && (
+              <span className="text-red-500 text-sm">
+                {formErrors.productName}
+              </span>
+            )}
           </div>
 
           <div className="md:flex md:gap-4">
@@ -173,6 +221,9 @@ export default function Newcontest() {
               {formErrors.date && (
                 <span className="text-red-500 text-sm">{formErrors.date}</span>
               )}
+              {formErrors.time && (
+                <span className="text-red-500 text-sm">{formErrors.time}</span>
+              )}
             </div>
 
             {/* Tags */}
@@ -201,7 +252,7 @@ export default function Newcontest() {
             </div>
           </div>
 
-          {/* URLs Row */}
+          {/* URL Inputs */}
           <div className="flex w-full gap-4">
             <div className="w-1/2">
               <Label htmlFor="image-url" className="font-medium">
@@ -209,95 +260,81 @@ export default function Newcontest() {
               </Label>
               <Input
                 id="image-url"
-                placeholder="https://example.com"
+                placeholder="Enter website URL"
+                value={imageUrl}
+                onChange={(e) => setImageUrl(e.target.value)}
                 className="mt-1"
-                type='url'
               />
+              {formErrors.imageUrl && (
+                <span className="text-red-500 text-sm">
+                  {formErrors.imageUrl}
+                </span>
+              )}
             </div>
 
             <div className="w-1/2">
-              <Label htmlFor="video-url" className="font-medium">
+              <Label htmlFor="twitter-url" className="font-medium">
                 Video URL
               </Label>
               <Input
                 id="video-url"
-                placeholder="https://example.com"
+                placeholder="Enter Video URL"
+                value={videoUrl}
+                onChange={(e) => setVideoUrl(e.target.value)}
                 className="mt-1"
-                type='url'
               />
+              {formErrors.videoUrl && (
+                <span className="text-red-500 text-sm">
+                  {formErrors.videoUrl}
+                </span>
+              )}
             </div>
           </div>
-
-          {/* Feed and Reference URL Row */}
           <div className="flex w-full gap-4">
             <div className="w-1/2">
-              <Label htmlFor="feed-image-url" className="font-medium">
+              <Label htmlFor="twitter-url" className="font-medium">
                 Feed Image URL
               </Label>
               <Input
-                id="feed-image-url"
-                placeholder="https://example.com"
+                id="feed-url"
+                placeholder="Enter Feed Image URL"
+                value={feedUrl}
+                onChange={(e) => setFeedUrl(e.target.value)}
                 className="mt-1"
-                type='url'
               />
+              {formErrors.feedUrl && (
+                <span className="text-red-500 text-sm">
+                  {formErrors.feedUrl}
+                </span>
+              )}
             </div>
 
             <div className="w-1/2">
-              <Label htmlFor="reference-url" className="font-medium">
+              <Label htmlFor="telegram-url" className="font-medium">
                 Reference URL
               </Label>
               <Input
                 id="reference-url"
-                placeholder="https://example.com"
-                className="mt-1"
-                type='url'
-              />
-            </div>
-          </div>
-
-          {/* Goal and Product Code Row */}
-          <div className="flex w-full gap-4">
-            <div className="w-1/2">
-              <Label htmlFor="goal" className="font-medium">
-                Goal
-              </Label>
-              <Input id="goal" placeholder="Enter goal" type='number' className="mt-1" />
-            </div>
-
-            <div className="w-1/2">
-              <Label htmlFor="product-code" className="font-medium">
-                Product Code
-              </Label>
-              <Input
-                id="product-code"
-                placeholder="Enter product code"
+                placeholder="Enter Reference URL"
+                value={referenceUrl}
+                onChange={(e) => setReferenceUrl(e.target.value)}
                 className="mt-1"
               />
+              {formErrors.referenceUrl && (
+                <span className="text-red-500 text-sm">
+                  {formErrors.referenceUrl}
+                </span>
+              )}
             </div>
           </div>
 
           {/* Currency and Category Row */}
           <div className="flex w-full gap-4">
             <div className="w-1/2">
-              <Label htmlFor="currency" className="font-medium">
-                Currency
-              </Label>
-              <Select>
-                <SelectTrigger>
-                  <SelectValue placeholder="USD" />
-                </SelectTrigger>
-                <SelectContent>
-                  <SelectItem value="usd">USD</SelectItem>
-                  <SelectItem value="ngn">NGN</SelectItem>
-                </SelectContent>
-              </Select>
-            </div>
-
-            <div className="w-1/2">
               <Label htmlFor="category" className="font-medium">
                 Category*
               </Label>
-              <Select>
+              <Select value={category} onValueChange={setCategory}>
                 <SelectTrigger>
                   <SelectValue placeholder="Select Category" />
                 </SelectTrigger>
@@ -306,64 +343,98 @@ export default function Newcontest() {
                   <SelectItem value="category2">Crypto Games</SelectItem>
                 </SelectContent>
               </Select>
+              {formErrors.category && (
+                <span className="text-red-500 text-sm">
+                  {formErrors.category}
+                </span>
+              )}
+            </div>
+
+            <div className="w-1/2">
+              <Label htmlFor="campaign" className="font-medium">
+                Campaign*
+              </Label>
+              <Select value={campaign} onValueChange={setCampaign}>
+                <SelectTrigger>
+                  <SelectValue placeholder="Select Campaign" />
+                </SelectTrigger>
+                <SelectContent>
+                  <SelectItem value="campaign1">
+                    Gadgets and Accessories
+                  </SelectItem>
+                  <SelectItem value="campaign2">
+                    Laptop and Computers
+                  </SelectItem>
+                  <SelectItem value="campaign3">Apple Products</SelectItem>
+                  <SelectItem value="campaign4">Crypto Games</SelectItem>
+                </SelectContent>
+              </Select>
+              {formErrors.campaign && (
+                <span className="text-red-500 text-sm">
+                  {formErrors.campaign}
+                </span>
+              )}
             </div>
           </div>
 
-          {/* Amount */}
-          <div>
+          {/* <div className="flex w-full gap-4"> */}
+
+          
+          <div className="w-full">
+              <Label htmlFor="category" className="font-medium">
+                Currency
+              </Label>
+              <Select value={category} onValueChange={setCategory}>
+                <SelectTrigger>
+                <SelectValue placeholder="USD" />
+                </SelectTrigger>
+                <SelectContent>
+                  <SelectItem value="usd">USD</SelectItem>
+                  <SelectItem value="ngn">NGN</SelectItem>
+                </SelectContent>
+              </Select>
+              {formErrors.category && (
+                <span className="text-red-500 text-sm">
+                  {formErrors.category}
+                </span>
+              )}
+            </div>
+
+            <div className="w-full">
             <Label htmlFor="amount" className="font-medium">
               Amount
             </Label>
             <Input id="amount" placeholder="Enter amount" type='number' className="mt-1" />
           </div>
+          {/* </div> */}
 
-          {/* Campaign */}
-          <div>
-            <Label htmlFor="campaign" className="font-medium">
-              Campaign *
-            </Label>
-            <Select>
-              <SelectTrigger>
-                <SelectValue placeholder="Select Campaign" />
-              </SelectTrigger>
-              <SelectContent>
-                <SelectItem value="campaign1">
-                  Gadgets and Accessories
-                </SelectItem>
-                <SelectItem value="campaign2">Laptop and Computers</SelectItem>
-                <SelectItem value="campaign3">Apple Products</SelectItem>
-                <SelectItem value="campaign4">Crypto Games</SelectItem>
-              </SelectContent>
-            </Select>
-          </div>
-
-          {/* Premium & Token Contest Checkboxes */}
-          <div className="flex items-center gap-4">
-            <div className="flex items-center space-x-2">
-              <Checkbox id="premium" />
-              <Label
-                htmlFor="premium"
-                className="flex items-center space-x-1 font-medium"
-              >
-                <span>Premium</span>
-                <Star className="w-5 h-5" />
-              </Label>
-            </div>
-            <div className="flex items-center space-x-2">
-              <Checkbox id="pay-token-contest" />
-              <Label htmlFor="pay-token-contest" className="font-medium">
-                Pay Token Contest
-              </Label>
-            </div>
-          </div>
+          {/* Checkbox Selection */}
+          <div className="grid grid-cols-2 gap-4">
+  <div className="flex items-center space-x-2">
+    <Checkbox
+      checked={premiumChecked}
+      onCheckedChange={handlePremiumChange}
+      id="premium"
+    />
+    <Label htmlFor="premium">Premium</Label>
+  </div>
+  <div className="flex items-center space-x-2">
+    <Checkbox
+      checked={payTokenContestChecked}
+      onCheckedChange={handlePayTokenContestChange}
+      id="pay-token-contest"
+    />
+    <Label htmlFor="pay-token-contest">Pay Token Contest</Label>
+  </div>
+</div>
+          {formErrors.checkboxes && (
+            <span className="text-red-500 text-sm">
+              {formErrors.checkboxes}
+            </span>
+          )}
         </CardContent>
-        <CardFooter>
-          <Button
-            className="w-full "
-            onClick={handleSubmit}
-          >
-            Edit Contest
-          </Button>
+        <CardFooter className="flex justify-center">
+          <Button className="w-full " onClick={handleSubmit}>Edit Create Contest</Button>
         </CardFooter>
       </Card>
     </div>
