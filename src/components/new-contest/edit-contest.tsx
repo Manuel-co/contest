@@ -209,8 +209,9 @@ export default function Newcontest() {
               </Label>
               <Input
                 id="image-url"
-                placeholder="Enter image URL"
+                placeholder="https://example.com"
                 className="mt-1"
+                type='url'
               />
             </div>
 
@@ -220,8 +221,9 @@ export default function Newcontest() {
               </Label>
               <Input
                 id="video-url"
-                placeholder="Enter video URL"
+                placeholder="https://example.com"
                 className="mt-1"
+                type='url'
               />
             </div>
           </div>
@@ -234,8 +236,9 @@ export default function Newcontest() {
               </Label>
               <Input
                 id="feed-image-url"
-                placeholder="Enter feed image URL"
+                placeholder="https://example.com"
                 className="mt-1"
+                type='url'
               />
             </div>
 
@@ -245,8 +248,9 @@ export default function Newcontest() {
               </Label>
               <Input
                 id="reference-url"
-                placeholder="Enter reference URL"
+                placeholder="https://example.com"
                 className="mt-1"
+                type='url'
               />
             </div>
           </div>
@@ -257,7 +261,7 @@ export default function Newcontest() {
               <Label htmlFor="goal" className="font-medium">
                 Goal
               </Label>
-              <Input id="goal" placeholder="Enter goal" className="mt-1" />
+              <Input id="goal" placeholder="Enter goal" type='number' className="mt-1" />
             </div>
 
             <div className="w-1/2">
@@ -310,7 +314,7 @@ export default function Newcontest() {
             <Label htmlFor="amount" className="font-medium">
               Amount
             </Label>
-            <Input id="amount" placeholder="Enter amount" className="mt-1" />
+            <Input id="amount" placeholder="Enter amount" type='number' className="mt-1" />
           </div>
 
           {/* Campaign */}
@@ -358,7 +362,7 @@ export default function Newcontest() {
             className="w-full "
             onClick={handleSubmit}
           >
-            Create Contest
+            Edit Contest
           </Button>
         </CardFooter>
       </Card>
